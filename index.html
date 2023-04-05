@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <style>
+ body{
+    background-color: #3498db;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+ }
+ #form-container{
+    background-color:white;
+    padding: 50px;
+    text-align: center;
+ }
+ h2{
+    margin: 0px 0px 10px 0px;
+
+ }
+ input{
+    width:200px;
+    margin: 10px 0px;
+    padding: 10px;
+ }
+ input[type="Submit"]{
+    width: 222px;
+    background-color: #3498db;
+    border: 0px;
+    color: white;
+    font-size: 16px;
+ }
+ .error{
+    color: red;
+    margin: 0px;
+    text-align: left;
+ }
+ h2{
+    background-color: #3498db;
+    color: white;
+   
+ }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateFrom()">
+            <input type="text" placeholder="
+            User name" id="username"><br>
+            <p id="userError" class="error">
+
+            </p>
+            <input type="text" placeholder="
+            password" id="password"><br>
+            <p id="passError" class="error">
+
+            </p>
+            <input type="Submit">
+        </form>
+    </div>
+    <script>
+        let username=document.getElementById("username");
+       
+        let password=document.getElementById("password");
+   let flag=1;
+        function validateFrom(){
+    if(username.value == ""){
+       document.getElementById("userError").innerHTML="username is empty";
+       flag=0;
+    }else if(username.value.length < 3  ){
+        document.getElementById("userError").innerHTML="username is require minmum 3 char";
+        flag=0;
+    }else{
+        document.getElementById("userError").innerHTML="";
+        flag=1;
+    }
+    if(password.value == ""){
+        document.getElementById("passError").innerHTML="password is empty";
+  flag=0;
+    }else{
+        document.getElementById("passError").innerHTML="";
+    flag=1;
+    }
+if(flag){
+    return true;
+}else{
+    return false;
+}
+
+  
+}
+
+
+
+    </script>
+</body>
+</html>
